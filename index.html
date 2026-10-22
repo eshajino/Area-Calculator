@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Rectangular calculator</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+<style>
+header{
+    background-image: url(https://media.geeksforgeeks.org/wp-content/uploads/20230307085100/Area-of-Rectangle-1.png);
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+</style>
+</head>
+<body>
+<header></header>
+<div class="container my-5">
+
+<div class="card p-3 text-center shadow">
+<form>
+
+<label class="form-label">Length(cm):</label>
+<input type="number" id="num1" class="form-control mb-3">
+
+<label class="form-label">Width(cm):</label>
+<input type="number" id="num2" class="form-control mb-3">
+
+<button class="btn btn-primary" onclick="areaCalculator()">Calculate Area</button>
+</form>
+<p id="result" class="my-3"></p>
+</div>
+
+</div>
+
+<script>
+function areaCalculator(){
+let length = parseFloat(document.getElementById("num1").value);
+
+let width = parseFloat(document.getElementById("num2").value);
+
+if (isNaN(length) || isNaN(width)) {
+  alert("Please enter valid numbers for length and width.");
+return;
+}
+
+let areaOfRectangle = length * width;
+
+document.getElementById("result").innerHTML = "The area of the rectangle is:" + areaOfRectangle + "cm²";
+
+}
+
+</script>
+</body>
+</html>
